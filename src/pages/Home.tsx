@@ -98,17 +98,17 @@ export default function Home() {
         <div className="w-full max-w-md bg-black/30 backdrop-blur-md rounded-xl p-8 shadow-2xl">
           {/* 按钮组 */}
           <div className="space-y-4">
-            <a 
-              href="https://lyjy.netlify.app" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center justify-between w-full py-3 px-4 border border-gray-600 rounded-lg overflow-hidden group"
-            >
-              <span className="text-white font-medium">lyjy主页</span>
-              <span className="bg-blue-600 text-white text-sm px-3 py-1 transition-transform duration-300 group-hover:scale-105">
-                进入
-              </span>
-            </a>
+             <a 
+  href="https://lyjymain.netlify.app" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="flex items-center justify-between w-full py-3 px-4 border border-gray-600 rounded-lg overflow-hidden group"
+>
+  <span className="text-white font-medium">lyjy主页</span>
+  <span className="bg-blue-600 text-white text-sm px-3 py-1 transition-transform duration-300 group-hover:scale-105">
+    进入
+  </span>
+</a>
             
             <a 
               href="https://lyjysearch.netlify.app" 
