@@ -1,6 +1,8 @@
 /// <reference types="node" />
 import React, { useState, useEffect, useRef } from 'react';
 import StarryBackground from '@/components/StarryBackground';
+import StatisticsModal from '@/components/StatisticsModal';
+import { generateRandomStatsData } from '@/lib/utils';
 
 // 标题文字
 const TITLE_TEXT = "lyjy导航页";
@@ -23,6 +25,8 @@ export default function Home() {
   
   const titleRef = useRef<HTMLDivElement>(null);
   const animationInterval = useRef<number | null>(null);
+  const [showStatsModal, setShowStatsModal] = useState(false);
+  const [statsData] = useState(generateRandomStatsData());
   
   // 生成随机颜色
   const getRandomColor = () => {
@@ -157,10 +161,26 @@ export default function Home() {
           </div>
         </div>
         
-        {/* 页脚 */}
-        <div className="absolute bottom-6 text-center text-gray-400 text-sm">
-          <p>© 2025 lyjy导航页 All Rights Reserved</p>
-        </div>
+         {/* 页脚 */}
+         <div className="absolute bottom-6 text-center text-gray-400 text-sm">
+           <p>© 2025 lyjy导航页 All Rights Reserved</p>
+         </div>
+         
+         {/* Statistics Button - Fixed in bottom right corner */}
+         <button
+           onClick={() => setShowStatsModal(true)}
+           className="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-40"
+           aria-label="查看网站统计数据"
+         >
+           <i class="fa-solid fa-chart-line text-xl"></i>
+         </button>
+         
+         {/* Statistics Modal */}
+         <StatisticsModal
+           isOpen={showStatsModal}
+           onClose={() => setShowStatsModal(false)}
+           data={statsData}
+         />
       </div>
     </div>
   );
