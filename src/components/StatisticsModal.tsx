@@ -9,8 +9,8 @@ interface StatisticsModalProps {
     date: string;
     homepage: number;
     search: number;
-    blog: number;
-    toolbox: number;
+    grandmaTraining: number;
+    monopoly: number;
   }[];
 }
 
@@ -91,65 +91,65 @@ export default function StatisticsModal({ isOpen, onClose, data }: StatisticsMod
             </div>
           </div>
           
-          {/* Blog Chart */}
-          <div className="p-4 border rounded-lg bg-gray-50 dark:bg-gray-800/50">
-            <h3 className="text-lg font-semibold mb-4 text-pink-600 dark:text-pink-400">LYJY blog访问量</h3>
-            <div className="h-80">
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={data}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                  <XAxis dataKey="date" tick={{ fontSize: 12 }} stroke="#6b7280" />
-                  <YAxis tick={{ fontSize: 12 }} stroke="#6b7280" />
-                  <Tooltip 
-                    contentStyle={{ 
-                      backgroundColor: 'white', 
-                      border: '1px solid #e5e7eb',
-                      borderRadius: '8px',
-                      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
-                    }} 
-                  />
-                  <Line 
-                    type="monotone" 
-                    dataKey="blog" 
-                    stroke="#ec4899" 
-                    strokeWidth={2}
-                    dot={{ r: 4 }}
-                    activeDot={{ r: 6 }}
-                  />
-                </LineChart>
-              </ResponsiveContainer>
-            </div>
-          </div>
-          
-          {/* Toolbox Chart */}
-          <div className="p-4 border rounded-lg bg-gray-50 dark:bg-gray-800/50">
-            <h3 className="text-lg font-semibold mb-4 text-green-600 dark:text-green-400">LYJY工具箱访问量</h3>
-            <div className="h-80">
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={data}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                  <XAxis dataKey="date" tick={{ fontSize: 12 }} stroke="#6b7280" />
-                  <YAxis tick={{ fontSize: 12 }} stroke="#6b7280" />
-                  <Tooltip 
-                    contentStyle={{ 
-                      backgroundColor: 'white', 
-                      border: '1px solid #e5e7eb',
-                      borderRadius: '8px',
-                      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
-                    }} 
-                  />
-                  <Line 
-                    type="monotone" 
-                    dataKey="toolbox" 
-                    stroke="#10b981" 
-                    strokeWidth={2}
-                    dot={{ r: 4 }}
-                    activeDot={{ r: 6 }}
-                  />
-                </LineChart>
-              </ResponsiveContainer>
-            </div>
-          </div>
+           {/* Grandma Training Chart */}
+           <div className="p-4 border rounded-lg bg-gray-50 dark:bg-gray-800/50">
+             <h3 className="text-lg font-semibold mb-4 text-green-600 dark:text-green-400">LYJY老人训练题访问量</h3>
+             <div className="h-80">
+               <ResponsiveContainer width="100%" height="100%">
+                 <LineChart data={data}>
+                   <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                   <XAxis dataKey="date" tick={{ fontSize: 12 }} stroke="#6b7280" />
+                   <YAxis tick={{ fontSize: 12 }} stroke="#6b7280" />
+                   <Tooltip 
+                     contentStyle={{ 
+                       backgroundColor: 'white', 
+                       border: '1px solid #e5e7eb',
+                       borderRadius: '8px',
+                       boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+                     }} 
+                   />
+                   <Line 
+                     type="monotone" 
+                     dataKey="grandmaTraining" 
+                     stroke="#10b981" 
+                     strokeWidth={2}
+                     dot={{ r: 4 }}
+                     activeDot={{ r: 6 }}
+                   />
+                 </LineChart>
+               </ResponsiveContainer>
+             </div>
+           </div>
+           
+           {/* Monopoly Chart */}
+           <div className="p-4 border rounded-lg bg-gray-50 dark:bg-gray-800/50">
+             <h3 className="text-lg font-semibold mb-4 text-yellow-600 dark:text-yellow-400">LYJY大富翁计分器访问量</h3>
+             <div className="h-80">
+               <ResponsiveContainer width="100%" height="100%">
+                 <LineChart data={data}>
+                   <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                   <XAxis dataKey="date" tick={{ fontSize: 12 }} stroke="#6b7280" />
+                   <YAxis tick={{ fontSize: 12 }} stroke="#6b7280" />
+                   <Tooltip 
+                     contentStyle={{ 
+                       backgroundColor: 'white', 
+                       border: '1px solid #e5e7eb',
+                       borderRadius: '8px',
+                       boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+                     }} 
+                   />
+                   <Line 
+                     type="monotone" 
+                     dataKey="monopoly" 
+                     stroke="#f59e0b" 
+                     strokeWidth={2}
+                     dot={{ r: 4 }}
+                     activeDot={{ r: 6 }}
+                   />
+                 </LineChart>
+               </ResponsiveContainer>
+             </div>
+           </div>
         </div>
       </div>
     </div>

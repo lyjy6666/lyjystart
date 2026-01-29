@@ -126,28 +126,28 @@ export default function Home() {
               </span>
              </a>
              
-               <a 
-                 href="https://blog-lyjy.haisnap.com" 
-                 target="_blank" 
-                 rel="noopener noreferrer"
-                 className="flex items-center justify-between w-full py-3 px-4 border border-gray-600 rounded-lg overflow-hidden group"
-               >
-                 <span className="text-white font-medium">lyjy的blog</span>
-                 <span className="bg-blue-600 text-white text-sm px-3 py-1 transition-transform duration-300 group-hover:scale-105">
-                   进入
-                 </span>
-               </a>
-              <a 
-                href="https://toolbox-lyjy.haisnap.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center justify-between w-full py-3 px-4 border border-gray-600 rounded-lg overflow-hidden group"
-              >
-                <span className="text-white font-medium">lyjy工具箱（beta）</span>
-                <span className="bg-purple-600 text-white text-sm px-3 py-1 transition-transform duration-300 group-hover:scale-105">
-                  进入
-                </span>
-              </a>
+                <a 
+                   href="https://grandma-lyjy.netlify.app" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="flex items-center justify-between w-full py-3 px-4 border border-gray-600 rounded-lg overflow-hidden group"
+                 >
+                   <span className="text-white font-medium">lyjy老人训练题</span>
+                   <span className="bg-blue-600 text-white text-sm px-3 py-1 transition-transform duration-300 group-hover:scale-105">
+                     进入
+                   </span>
+                 </a>
+                <a 
+                   href="https://lyjymonopoly.netlify.app" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="flex items-center justify-between w-full py-3 px-4 border border-gray-600 rounded-lg overflow-hidden group"
+                 >
+                   <span className="text-white font-medium">lyjy大富翁计分器</span>
+                   <span className="bg-blue-600 text-white text-sm px-3 py-1 transition-transform duration-300 group-hover:scale-105">
+                     进入
+                   </span>
+                 </a>
               
               <button 
               className="flex items-center justify-between w-full py-3 px-4 border border-gray-600 rounded-lg overflow-hidden bg-gray-800/50 cursor-not-allowed"
