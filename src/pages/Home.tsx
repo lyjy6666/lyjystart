@@ -137,34 +137,54 @@ export default function Home() {
                      进入
                    </span>
                  </a>
-                <a 
-                   href="https://lyjymonopoly.netlify.app" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   className="flex items-center justify-between w-full py-3 px-4 border border-gray-600 rounded-lg overflow-hidden group"
-                 >
-                   <span className="text-white font-medium">lyjy大富翁计分器</span>
-                   <span className="bg-blue-600 text-white text-sm px-3 py-1 transition-transform duration-300 group-hover:scale-105">
-                     进入
-                   </span>
-                 </a>
-              
-              <button 
-              className="flex items-center justify-between w-full py-3 px-4 border border-gray-600 rounded-lg overflow-hidden bg-gray-800/50 cursor-not-allowed"
-              disabled
-            >
-              <span className="text-gray-400 font-medium">敬请期待</span>
-              <span className="bg-gray-500 text-white text-sm px-3 py-1">
-                进入
-              </span>
-            </button>
+                 <a 
+                    href="https://lyjymonopoly.netlify.app" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between w-full py-3 px-4 border border-gray-600 rounded-lg overflow-hidden group"
+                  >
+                    <span className="text-white font-medium">lyjy大富翁计分器</span>
+                    <span className="bg-blue-600 text-white text-sm px-3 py-1 transition-transform duration-300 group-hover:scale-105">
+                      进入
+                    </span>
+                  </a>
+                  
+                  <a 
+                    href="https://lyjytool.netlify.app" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between w-full py-3 px-4 border border-gray-600 rounded-lg overflow-hidden group"
+                  >
+                    <span className="text-white font-medium">lyjy格式转换工具箱</span>
+                    <span className="bg-blue-600 text-white text-sm px-3 py-1 transition-transform duration-300 group-hover:scale-105">
+                      进入
+                    </span>
+                  </a>
+                  
+                  <a 
+                    href="https://lyjyhomework.netlify.app" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between w-full py-3 px-4 border border-gray-600 rounded-lg overflow-hidden group"
+                  >
+                    <span className="text-white font-medium">lyjy作业管理系统</span>
+                    <span className="bg-blue-600 text-white text-sm px-3 py-1 transition-transform duration-300 group-hover:scale-105">
+                      进入
+                    </span>
+                  </a>
           </div>
         </div>
         
          {/* 页脚 */}
-         <div className="absolute bottom-6 text-center text-gray-400 text-sm">
-           <p>© 2025 lyjy导航页 All Rights Reserved</p>
-         </div>
+          <div className="absolute bottom-16 w-full text-center">
+            <div className="inline-block px-6 py-2 bg-gradient-to-r from-purple-600/80 to-blue-600/80 backdrop-blur-sm rounded-full shadow-lg animate-pulse">
+              <span className="text-white font-medium">敬请期待更多功能</span>
+            </div>
+          </div>
+          
+          <div className="absolute bottom-6 text-center text-gray-400 text-sm">
+            <p>© 2025 lyjy导航页 All Rights Reserved</p>
+          </div>
          
          {/* Statistics Button - Fixed in bottom right corner */}
          <button
