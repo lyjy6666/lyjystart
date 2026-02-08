@@ -9,6 +9,7 @@ export interface WebsiteStats {
   monopoly: number;
   toolbox: number;
   homeworkSystem: number;
+  fruitGame: number;
 }
 
 /**
@@ -62,15 +63,18 @@ export function generateRandomStatsData(): WebsiteStats[] {
         homeworkSystemVisits = Math.floor(Math.random() * 401) + 50;     // 50-450
        }
      
-     data.push({
-       date: formattedDate,
-       homepage: homepageVisits,
-       search: searchVisits,
-       grandmaTraining: grandmaTrainingVisits,
-       monopoly: monopolyVisits,
-       toolbox: toolboxVisits,
-       homeworkSystem: homeworkSystemVisits
-     });
+      data.push({
+        date: formattedDate,
+        homepage: homepageVisits,
+        search: searchVisits,
+        grandmaTraining: grandmaTrainingVisits,
+        monopoly: monopolyVisits,
+        toolbox: toolboxVisits,
+        homeworkSystem: homeworkSystemVisits,
+        fruitGame: isWeekend || isSpecialDay ? 
+          Math.floor(Math.random() * 401) + 300 : // 周末或特殊日：300-700
+          Math.floor(Math.random() * 301) + 50     // 普通工作日：50-350
+      });
   }
   
   return data;

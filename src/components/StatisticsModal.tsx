@@ -11,6 +11,7 @@ interface StatisticsModalProps {
     search: number;
     grandmaTraining: number;
     monopoly: number;
+    fruitGame?: number;
   }[];
 }
 
@@ -208,8 +209,38 @@ export default function StatisticsModal({ isOpen, onClose, data }: StatisticsMod
                     />
                   </LineChart>
                 </ResponsiveContainer>
-              </div>
-            </div>
+         </div>
+         
+         {/* Fruit Game Chart */}
+         <div className="p-4 border rounded-lg bg-gray-50 dark:bg-gray-800/50">
+           <h3 className="text-lg font-semibold mb-4 text-indigo-600 dark:text-indigo-400">LYJY水果游戏访问量</h3>
+           <div className="h-80">
+             <ResponsiveContainer width="100%" height="100%">
+               <LineChart data={data}>
+                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                 <XAxis dataKey="date" tick={{ fontSize: 12 }} stroke="#6b7280" />
+                 <YAxis tick={{ fontSize: 12 }} stroke="#6b7280" />
+                 <Tooltip 
+                   contentStyle={{ 
+                     backgroundColor: 'white', 
+                     border: '1px solid #e5e7eb',
+                     borderRadius: '8px',
+                     boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+                   }} 
+                 />
+                 <Line 
+                   type="monotone" 
+                   dataKey="fruitGame" 
+                   stroke="#6366f1" 
+                   strokeWidth={2}
+                   dot={{ r: 4 }}
+                   activeDot={{ r: 6 }}
+                 />
+               </LineChart>
+             </ResponsiveContainer>
+           </div>
+         </div>
+       </div>
         </div>
       </div>
     </div>

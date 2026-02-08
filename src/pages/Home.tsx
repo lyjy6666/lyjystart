@@ -27,6 +27,7 @@ export default function Home() {
   const animationInterval = useRef<number | null>(null);
   const [showStatsModal, setShowStatsModal] = useState(false);
   const [statsData] = useState(generateRandomStatsData());
+  const [isExpanded, setIsExpanded] = useState(false);
   
   // 生成随机颜色
   const getRandomColor = () => {
@@ -100,7 +101,7 @@ export default function Home() {
         
         {/* 按钮容器 - 半透明背景 */}
         <div className="w-full max-w-md bg-black/30 backdrop-blur-md rounded-xl p-8 shadow-2xl">
-          {/* 按钮组 */}
+          {/* 主要按钮组 */}
           <div className="space-y-4">
              <a 
   href="https://lyjymain.netlify.app" 
@@ -126,52 +127,79 @@ export default function Home() {
               </span>
              </a>
              
-                <a 
-                   href="https://grandma-lyjy.netlify.app" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   className="flex items-center justify-between w-full py-3 px-4 border border-gray-600 rounded-lg overflow-hidden group"
-                 >
-                   <span className="text-white font-medium">lyjy老人训练题</span>
-                   <span className="bg-blue-600 text-white text-sm px-3 py-1 transition-transform duration-300 group-hover:scale-105">
-                     进入
-                   </span>
-                 </a>
-                 <a 
-                    href="https://lyjymonopoly.netlify.app" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between w-full py-3 px-4 border border-gray-600 rounded-lg overflow-hidden group"
-                  >
-                    <span className="text-white font-medium">lyjy大富翁计分器</span>
-                    <span className="bg-blue-600 text-white text-sm px-3 py-1 transition-transform duration-300 group-hover:scale-105">
-                      进入
-                    </span>
-                  </a>
-                  
+             <a 
+               href="https://lyjytool.netlify.app" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               className="flex items-center justify-between w-full py-3 px-4 border border-gray-600 rounded-lg overflow-hidden group"
+             >
+               <span className="text-white font-medium">lyjy格式转换工具箱</span>
+               <span className="bg-blue-600 text-white text-sm px-3 py-1 transition-transform duration-300 group-hover:scale-105">
+                 进入
+               </span>
+             </a>
+             
+             <a 
+                href="https://zr8zsx99yt.coze.site" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-between w-full py-3 px-4 border border-gray-600 rounded-lg overflow-hidden group"
+              >
+                <span className="text-white font-medium">lyjy作业管理系统</span>
+                <span className="bg-blue-600 text-white text-sm px-3 py-1 transition-transform duration-300 group-hover:scale-105">
+                  进入
+                </span>
+              </a>
+              
+              {/* 折叠区域 */}
+              <div className="mt-6">
+                <button
+                  onClick={() => setIsExpanded(!isExpanded)}
+                  className="w-full py-2 px-4 bg-gradient-to-r from-purple-600/70 to-blue-600/70 text-white rounded-lg flex items-center justify-center gap-2 transition-all duration-300 hover:opacity-90"
+                >
+                  <span className="font-medium">{isExpanded ? '收起' : '展开'}更多游戏</span>
+                  <i className={`fa-solid transition-transform duration-300 ${isExpanded ? 'fa-chevron-up' : 'fa-chevron-down'}`}></i>
+                </button>
+                
+                {/* 折叠内容 */}
+                <div className={`space-y-4 mt-4 overflow-hidden transition-all duration-500 ease-in-out ${isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
                   <a 
-                    href="https://lyjytool.netlify.app" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between w-full py-3 px-4 border border-gray-600 rounded-lg overflow-hidden group"
-                  >
-                    <span className="text-white font-medium">lyjy格式转换工具箱</span>
-                    <span className="bg-blue-600 text-white text-sm px-3 py-1 transition-transform duration-300 group-hover:scale-105">
-                      进入
-                    </span>
-                  </a>
-                  
-                  <a 
-                     href="https://zr8zsx99yt.coze.site" 
+                     href="https://lyjyfruitgame.netlify.app" 
                      target="_blank" 
                      rel="noopener noreferrer"
                      className="flex items-center justify-between w-full py-3 px-4 border border-gray-600 rounded-lg overflow-hidden group"
                    >
-                     <span className="text-white font-medium">lyjy作业管理系统</span>
+                     <span className="text-white font-medium">lyjy水果游戏</span>
                      <span className="bg-blue-600 text-white text-sm px-3 py-1 transition-transform duration-300 group-hover:scale-105">
                        进入
                      </span>
                    </a>
+                   
+                   <a 
+                      href="https://lyjymonopoly.netlify.app" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-between w-full py-3 px-4 border border-gray-600 rounded-lg overflow-hidden group"
+                    >
+                      <span className="text-white font-medium">lyjy大富翁计分器</span>
+                      <span className="bg-blue-600 text-white text-sm px-3 py-1 transition-transform duration-300 group-hover:scale-105">
+                        进入
+                      </span>
+                    </a>
+                    
+                    <a 
+                       href="https://grandma-lyjy.netlify.app" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       className="flex items-center justify-between w-full py-3 px-4 border border-gray-600 rounded-lg overflow-hidden group"
+                     >
+                       <span className="text-white font-medium">lyjy老人训练题</span>
+                       <span className="bg-blue-600 text-white text-sm px-3 py-1 transition-transform duration-300 group-hover:scale-105">
+                         进入
+                       </span>
+                     </a>
+                </div>
+              </div>
           </div>
         </div>
         
