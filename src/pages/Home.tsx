@@ -381,14 +381,29 @@ export default function Home() {
                                             className="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400">
                                             <i className="fa-solid fa-tools"></i>
                                         </div>
-                                        <span className="text-white font-medium">格式转换工具箱</span>
+                                        <div className="flex items-center">
+                                            <span className="text-white font-medium">格式转换工具箱</span>
+                                            <span className="ml-2 px-1.5 py-0.5 bg-cyan-500/20 text-cyan-300 text-xs rounded-full border border-cyan-500/30">Beta</span>
+                                        </div>
                                     </div>
-                                    <motion.span
-                                        className="bg-cyan-600 text-white text-sm px-3 py-1 rounded-full"
-                                        whileHover={{
-                                            scale: 1.1
-                                        }}>进入
-                                                          </motion.span>
+                                    <div className="flex gap-2">
+                                        <motion.a
+                                            href="https://pan.quark.cn/s/1c01905791bc"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="bg-cyan-700 text-white text-sm px-3 py-1 rounded-full"
+                                            whileHover={{
+                                                scale: 1.1
+                                            }}>
+                                            <i className="fa-solid fa-download mr-1"></i>下载
+                                        </motion.a>
+                                        <motion.span
+                                            className="bg-cyan-600 text-white text-sm px-3 py-1 rounded-full"
+                                            whileHover={{
+                                                scale: 1.1
+                                            }}>进入
+                                        </motion.span>
+                                    </div>
                                 </motion.a>
                                 <motion.a
                                     href="https://zr8zsx99yt.coze.site"
