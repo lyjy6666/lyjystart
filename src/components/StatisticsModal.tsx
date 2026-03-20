@@ -12,7 +12,9 @@ interface StatisticsModalProps {
     search: number;
     grandmaTraining: number;
     monopoly: number;
-    fruitGame?: number;
+    toolbox: number;
+    homeworkSystem: number;
+    fruitGame: number;
   }[];
 }
 
@@ -68,25 +70,29 @@ export default function StatisticsModal({ isOpen, onClose, data }: StatisticsMod
                     labelStyle={{ color: '#93c5fd' }}
                   />
                   {/* 增加线条宽度、数据点大小和颜色饱和度，提高可视性 */}
-                  <Line type="monotone" dataKey="homepage" stroke="#3b82f6" strokeWidth={4} dot={{ r: 5, strokeWidth: 2, stroke: '#3b82f6', fill: '#1e3a8a' }} activeDot={{ r: 8, strokeWidth: 0, fill: '#3b82f6' }} />
-                  <Line type="monotone" dataKey="search" stroke="#8b5cf6" strokeWidth={4} dot={{ r: 5, strokeWidth: 2, stroke: '#8b5cf6', fill: '#312e81' }} activeDot={{ r: 8, strokeWidth: 0, fill: '#8b5cf6' }} />
-                  <Line type="monotone" dataKey="toolbox" stroke="#06b6d4" strokeWidth={4} dot={{ r: 5, strokeWidth: 2, stroke: '#06b6d4', fill: '#0891b2' }} activeDot={{ r: 8, strokeWidth: 0, fill: '#06b6d4' }} />
-                  <Line type="monotone" dataKey="homeworkSystem" stroke="#10b981" strokeWidth={4} dot={{ r: 5, strokeWidth: 2, stroke: '#10b981', fill: '#065f46' }} activeDot={{ r: 8, strokeWidth: 0, fill: '#10b981' }} />
-                  <Line type="monotone" dataKey="fruitGame" stroke="#f59e0b" strokeWidth={4} dot={{ r: 5, strokeWidth: 2, stroke: '#f59e0b', fill: '#92400e' }} activeDot={{ r: 8, strokeWidth: 0, fill: '#f59e0b' }} />
+                  <Line type="monotone" dataKey="homepage" stroke="#3b82f6" strokeWidth={3} dot={{ r: 4, strokeWidth: 2, stroke: '#3b82f6', fill: '#1e3a8a' }} activeDot={{ r: 7, strokeWidth: 0, fill: '#3b82f6' }} />
+                  <Line type="monotone" dataKey="search" stroke="#8b5cf6" strokeWidth={3} dot={{ r: 4, strokeWidth: 2, stroke: '#8b5cf6', fill: '#312e81' }} activeDot={{ r: 7, strokeWidth: 0, fill: '#8b5cf6' }} />
+                  <Line type="monotone" dataKey="toolbox" stroke="#06b6d4" strokeWidth={3} dot={{ r: 4, strokeWidth: 2, stroke: '#06b6d4', fill: '#0891b2' }} activeDot={{ r: 7, strokeWidth: 0, fill: '#06b6d4' }} />
+                  <Line type="monotone" dataKey="homeworkSystem" stroke="#10b981" strokeWidth={3} dot={{ r: 4, strokeWidth: 2, stroke: '#10b981', fill: '#065f46' }} activeDot={{ r: 7, strokeWidth: 0, fill: '#10b981' }} />
+                  <Line type="monotone" dataKey="fruitGame" stroke="#f59e0b" strokeWidth={3} dot={{ r: 4, strokeWidth: 2, stroke: '#f59e0b', fill: '#92400e' }} activeDot={{ r: 7, strokeWidth: 0, fill: '#f59e0b' }} />
+                  <Line type="monotone" dataKey="monopoly" stroke="#eab308" strokeWidth={3} dot={{ r: 4, strokeWidth: 2, stroke: '#eab308', fill: '#854d0e' }} activeDot={{ r: 7, strokeWidth: 0, fill: '#eab308' }} />
+                  <Line type="monotone" dataKey="grandmaTraining" stroke="#ec4899" strokeWidth={3} dot={{ r: 4, strokeWidth: 2, stroke: '#ec4899', fill: '#701a75' }} activeDot={{ r: 7, strokeWidth: 0, fill: '#ec4899' }} />
                 </LineChart>
               </ResponsiveContainer>
             </div>
             
             {/* Legend */}
-            <div className="flex flex-wrap justify-center gap-6 mt-6">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-6">
               {[
                 { key: 'homepage', name: '主页', color: '#3b82f6' },
                 { key: 'search', name: '搜索页', color: '#8b5cf6' },
                 { key: 'toolbox', name: '工具箱', color: '#06b6d4' },
                 { key: 'homeworkSystem', name: '作业系统', color: '#10b981' },
                 { key: 'fruitGame', name: '水果游戏', color: '#f59e0b' },
+                { key: 'monopoly', name: '大富翁计分器', color: '#eab308' },
+                { key: 'grandmaTraining', name: '老人训练题', color: '#ec4899' }
               ].map((item) => (
-                <div key={item.key} className="flex items-center text-base text-white font-medium">
+                <div key={item.key} className="flex items-center text-sm md:text-base text-white font-medium">
                   <div className="w-4 h-4 rounded-full mr-2" style={{ backgroundColor: item.color }}></div>
                   {item.name}
                 </div>
@@ -124,15 +130,19 @@ export default function StatisticsModal({ isOpen, onClose, data }: StatisticsMod
                     sums[2] += day.toolbox;
                     sums[3] += day.homeworkSystem;
                     sums[4] += day.fruitGame;
+                    sums[5] += day.monopoly;
+                    sums[6] += day.grandmaTraining;
                     return sums;
-                  }, [0, 0, 0, 0, 0]).indexOf(Math.max(...data.reduce((sums, day) => {
+                  }, [0, 0, 0, 0, 0, 0, 0]).indexOf(Math.max(...data.reduce((sums, day) => {
                     sums[0] += day.homepage;
                     sums[1] += day.search;
                     sums[2] += day.toolbox;
                     sums[3] += day.homeworkSystem;
                     sums[4] += day.fruitGame;
+                    sums[5] += day.monopoly;
+                    sums[6] += day.grandmaTraining;
                     return sums;
-                  }, [0, 0, 0, 0, 0])))
+                  }, [0, 0, 0, 0, 0, 0, 0])))
                 ],
                 icon: 'fa-star', 
                 color: 'yellow'

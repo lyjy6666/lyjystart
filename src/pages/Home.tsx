@@ -8,7 +8,20 @@ const TITLE_TEXT = "LYJY导航系统";
 
 export default function Home() {
     const [showStatsModal, setShowStatsModal] = useState(false);
-    const [statsData] = useState(generateRandomStatsData());
+  // 生成网站统计数据并使用localStorage持久化
+  const [statsData, setStatsData] = useState(() => {
+    // 首先尝试从localStorage获取数据
+    const storedData = localStorage.getItem('websiteStatsData');
+    
+    // 为了测试新的数据生成逻辑，先清除旧数据
+    localStorage.removeItem('websiteStatsData');
+    
+    // 生成新数据
+    const newData = generateRandomStatsData();
+    // 将新数据存入localStorage
+    localStorage.setItem('websiteStatsData', JSON.stringify(newData));
+    return newData;
+  });
     const [isExpanded, setIsExpanded] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
     const [dynamicNumber, setDynamicNumber] = useState(0);
