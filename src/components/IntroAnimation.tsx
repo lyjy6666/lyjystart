@@ -8,6 +8,8 @@ interface IntroAnimationProps {
 const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) => {
   const controls = useAnimation();
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const onCompleteRef = useRef(onComplete);
+  onCompleteRef.current = onComplete;
   const particles: Particle[] = [];
   const particleCount = 100;
 
@@ -131,7 +133,7 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) => {
           ease: "easeIn"
         }
       }).then(() => {
-        onComplete();
+        onCompleteRef.current();
       });
     }, 3000); // 3秒后开始淡出
 
@@ -139,7 +141,7 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) => {
       clearTimeout(timer);
       window.removeEventListener('resize', resizeCanvas);
     };
-  }, [controls, onComplete]);
+  }, [controls]);
 
   // 文字字符数组
   const textChars = ['L', 'Y', 'J', 'Y'];
@@ -168,16 +170,20 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) => {
               scale: 1,
               textShadow: [
                 `0 0 10px rgba(59, 130, 246, 0.7)`,
-                `0 0 20px rgba(59, 130, 246, 0.5)`,
-                `0 0 30px rgba(59, 130, 246, 0.3)`,
-                `0 0 40px rgba(59, 130, 246, 0.1)`
+                `0 0 30px rgba(59, 130, 246, 0.2)`
               ]
             }}
             transition={{
               delay: index * 0.2,
               duration: 0.8,
               type: "spring",
-              stiffness: 100
+              stiffness: 100,
+              textShadow: {
+                type: "tween",
+                repeat: Infinity,
+                repeatType: "reverse",
+                duration: 2
+              }
             }}
             style={{
               backgroundImage: "linear-gradient(45deg, #3b82f6, #60a5fa, #93c5fd)",

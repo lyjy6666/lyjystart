@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Background from "@/components/Background";
 import StatisticsModal from "@/components/StatisticsModal";
+import DomainNoticeModal from "@/components/DomainNoticeModal";
 import { generateRandomStatsData } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
@@ -8,6 +9,9 @@ const TITLE_TEXT = "LYJY导航系统";
 
 export default function Home() {
     const [showStatsModal, setShowStatsModal] = useState(false);
+  const [showDomainNotice, setShowDomainNotice] = useState(() => {
+    try { return sessionStorage.getItem("domain_notice_closed") !== "1"; } catch { return true; }
+  });
   // 生成网站统计数据并使用localStorage持久化
   const [statsData, setStatsData] = useState(() => {
     // 首先尝试从localStorage获取数据
@@ -674,6 +678,12 @@ export default function Home() {
                     isOpen={showStatsModal}
                     onClose={() => setShowStatsModal(false)}
                     data={statsData} />
+                <DomainNoticeModal
+                    isOpen={showDomainNotice}
+                    onClose={() => {
+                        try { sessionStorage.setItem("domain_notice_closed", "1"); } catch {}
+                        setShowDomainNotice(false);
+                    }} />
             </div>
         </div>
     );
